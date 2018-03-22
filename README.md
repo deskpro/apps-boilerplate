@@ -2,37 +2,9 @@
 A foundation to get you started developing React DeskPro Apps with the best developer experience
 
 ## Contents
-- [Installation](#installation)
-- [Development](#development)
 - [Packaging](#packaging)
 - [Running tests](#running-tests)
 - [Online guides and documentation](https://deskpro.gitbooks.io/deskpro-apps/)
-
-
-## Installation
-    
-This project requires [Deskpro Apps Tool](https://github.com/deskpro/apps-dpat) to be installed alongside the other dependencies. You can install [Deskpro Apps Tool](https://github.com/deskpro/apps-dpat) either locally or globally. We recommend to install it globally so you have it always available, regardless of how many apps you develop.
-    
-To install the dependencies and [Deskpro Apps Tool](https://github.com/deskpro/apps-dpat) locally, run:
-    
-    npm install && npm install --save @deskpro/apps-sdk-react && npm install @deskpro/apps-dpat   
-
-If you already have [Deskpro Apps Tool](https://github.com/deskpro/apps-dpat) installed, run:
- 
-    npm install && npm install --save @deskpro/apps-sdk-react
-
-## Development
-             
-The best way to develop is to use the specially built development server, made available by [Deskpro Apps Tool](https://github.com/deskpro/apps-dpat). To start the server, from your project folder, run:    
-    
-    npm run dev
- 
- 
-Go to your deskpro installation, login to the agent interface, and navigate to the link below: 
-    
-    https://your-local-deskpro.com/agent/?appstore.environment=development
-
-Notice the **appstore.environment=development** query parameter that tells Deskpro to load your application from the development server
 
  
 To start making changes, open the following file in  your favourite editor.
@@ -53,3 +25,8 @@ To package the application, in your project folder run:
 
 This will create a `dist` folder inside your project folder which contains all the unpacked and compiled assets
 and a zip file named `app.zip`. This `app.zip` file is the one required to install your application via the DeskPro admin interface.
+
+## Running tests
+
+This boilerplate uses `jest` via `@deskpro/apps-dpat`. No configuration is necessary, just run `npm run test`
+

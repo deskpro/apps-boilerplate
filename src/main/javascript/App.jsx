@@ -4,28 +4,13 @@ import PropTypes from 'prop-types';
 /**
  * Renders a Deskpro app.
  */
-export default class App extends React.PureComponent {
+export default class App extends React.Component {
+
   static propTypes = {
     /**
-     * Instance of sdk storage.
-     * @see https://deskpro.gitbooks.io/deskpro-apps/content/api/props/storage.html
+     * Instance of the Deskpro App Sdk Client
      */
-    storage: PropTypes.object,
-    /**
-     * Instance of sdk oauth.
-     * @see https://deskpro.gitbooks.io/deskpro-apps/content/api/props/oauth.html
-     */
-    oauth:   PropTypes.object,
-    /**
-     * Instance of sdk route.
-     * @see https://deskpro.gitbooks.io/deskpro-apps/content/api/props/route.html
-     */
-    route:   PropTypes.object,
-    /**
-     * Instance of sdk ui.
-     * @see https://deskpro.gitbooks.io/deskpro-apps/content/api/props/ui.html
-     */
-    ui:      PropTypes.object
+    dpapp: PropTypes.object
   };
 
   render() {
