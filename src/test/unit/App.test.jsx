@@ -1,7 +1,8 @@
 import React from 'react';
-import { createAppFromProps } from '@deskpro/apps-sdk-core';
-import renderer from 'react-test-renderer';
+import { createAppFromProps } from '@deskpro/apps-sdk-core/lib/main/javascript/Core/createApp';
+import WidgetWindowBridge from '@deskpro/apps-sdk-core/lib/main/javascript/Widget/WidgetWindowBridge.js'
 
+import renderer from 'react-test-renderer';
 import App from '../../main/javascript/App';
 
 test('successfully render the application in initial state', done => {
@@ -22,7 +23,15 @@ test('successfully render the application in initial state', done => {
     instanceId: '1'
   };
 
-  const dpapp = createAppFromProps({ contextProps, instanceProps });
+  const widgetWindow = new WidgetWindowBridge({
+    location : {
+      search: 'somethingSomething',
+      hash: `#somethingSomething`
+    },
+    document: { readyState : 'notReady' }
+  }, {});
+
+  const dpapp = createAppFromProps({ widgetWindow, contextProps, instanceProps });
   const component = renderer.create(<App dpapp={dpapp} />);
 
   let tree = component.toJSON();
