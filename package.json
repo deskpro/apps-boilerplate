@@ -55,8 +55,5 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-test-renderer": "^15.6.1"
-  },
-  "dependencies": {
-    "webpack": "^4.2.0"
   }
 }
