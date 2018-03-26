@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "dpat server .",
     "package": "dpat clean . && dpat compile . && dpat bundle-installer . && dpat verify ./dist && dpat package .",
-    "test": "dpat test ."
+    "test": "dpat test .",
+    "symlink-webpack-binaries": "cd ./node_modules/@deskpro/apps-dpat/node_modules/.bin && rm -rf webpack && rm -rf webpack-dev-server &&  ln -sf ../webpack-dev-server/bin/webpack-dev-server.js webpack-dev-server && ln -sf ../webpack/bin/webpack.js webpack",
+    "postinstall": "npm run symlink-webpack-binaries"
   },
   "repository": {
     "type": "git",
@@ -53,5 +55,8 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-test-renderer": "^15.6.1"
+  },
+  "dependencies": {
+    "webpack": "^4.2.0"
   }
 }
